@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Banda Neira - Raditya Panji Baskara</title>
+
+    <style>
+        :root {
+            --primary: #ffd700;
+            --bg-dark: #001220;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-dark), #002b46);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Banner (Poin 3) */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1589197331516-4d84593e04e7?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        header h1 {
+            font-size: 45px;
+            color: var(--primary);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigasi (Poin 3) */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Content (Poin 3) */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Tabel Galeri (Poin 6 & Request Penggunaan TR) */
+        .destinasi-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .destinasi-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .destinasi-table td {
+            padding: 25px 15px;
+            vertical-align: top;
+        }
+
+        .img-col {
+            width: 350px;
+        }
+
+        .destinasi-table img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-col h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .text-col p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        /* Form (Poin 7) */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #000;
+            color: white;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: black;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Footer (Poin 3 & 8) */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 60px;
+            border-top: 1px solid var(--primary);
+        }
+
+        #jam {
+            color: var(--primary);
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PESONA BANDA NEIRA</h1>
+        <p>Warisan Dunia & Surga Rempah Nusantara</p>
+    </header>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">Tentang</a>
+        <a onclick="showPage('gallery')">Gallery Destinasi</a>
+        <a onclick="showPage('contact')">Kontak</a>
+    </nav>
+
+    <div class="container" id="main-content">
+    </div>
+
+    <footer>
+        <div id="jam"></div>
+        <br>
+        <p>CopyRight &copy; 2026 - Raditya Panji Baskara - NIM: 251011700243</p>
+    </footer>
+
+    <script>
+        function showPage(page) {
+            const content = document.getElementById('main-content');
+
+            if (page === 'home') {
+                content.innerHTML = `
+                    <h2>Selamat Datang di Banda Neira</h2>
+                    <br>
+                    <p>Banda Neira adalah pusat sejarah dunia yang terletak di Maluku. Melalui website ini, Raditya Panji Baskara ingin memperkenalkan keindahan alam dan nilai sejarah yang tak ternilai dari Kepulauan Banda.</p>
+                `;
+            }
+
+            if (page === 'about') {
+                content.innerHTML = `
+                    <h2>Tentang Banda Neira</h2>
+                    <br>
+                    <p>Kepulauan ini pernah menjadi satu-satunya sumber buah Pala di dunia. Sejarahnya melibatkan bangsa-bangsa besar seperti Portugis, Belanda, dan Inggris. Kini, ia menjadi destinasi wisata sejarah dan diving terbaik di Indonesia.</p>
+                `;
+            }
+
+            if (page === 'gallery') {
+                // Poin 6: Menu Gallery Gambar/Foto dan penjelasannya
+                content.innerHTML = `
+                    <h2>Gallery Destinasi Pilihan</h2>
+                    <br>
+                    <table class="destinasi-table">
+                        <tr>
+                            <td class="img-col">
+                                <img src="benteng belgecia.WEBP">
+                            </td>
+                            <td class="text-col">
+                                <h3>Benteng Belgica</h3>
+                                <p>Benteng ikonik berbentuk pentagon peninggalan VOC. Raditya menyarankan tempat ini untuk melihat panorama seluruh Kepulauan Banda dari atas menara.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="img-col">
+                                <img src="gunung api banda.WEBP">
+                            </td>
+                            <td class="text-col">
+                                <h3>Gunung Api Banda</h3>
+                                <p>Gunung berapi aktif di tengah laut yang memberikan pemandangan matahari terbit yang spektakuler bagi para pendaki.</p>
+                            </td>
+                        </tr>
+                    </table>
+                `;
+            }
+
+            if (page === 'contact') {
+                // Poin 7: Menu inputan berupa Form/Formulir
+                content.innerHTML = `
+                    <h2>Hubungi Raditya</h2>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap">
+                        <input type="email" placeholder="Email Anda">
+                        <textarea rows="5" placeholder="Pesan Anda untuk Raditya..."></textarea>
+                        <button class="btn">Kirim Sekarang</button>
+                    </div>
+                `;
+            }
+        }
+
+
+
+        setInterval(updateClock, 1000);
+        updateClock();
+        showPage('home'); // Tampilan default
+    </script>
+</body>
+
+</html>
